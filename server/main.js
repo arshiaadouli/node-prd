@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-
+var PORT = process.env.PORT||8081
 // This responds with "Hello World" on the homepage
 app.get('/', function (req, res) {
    console.log("Got a GET request for the homepage");
@@ -31,7 +31,7 @@ app.get('/ab*cd', function(req, res) {
    res.send('Page Pattern Match');
 })
 
-var server = app.listen(8081, function () {
+var server = app.listen(PORT, function () {
    var host = server.address().address
    var port = server.address().port
    
